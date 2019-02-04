@@ -20,7 +20,6 @@ class WeightDrop(torch.nn.Module):
         return
 
     def _setup(self):
-        # Idea: What if WeightDrop stores the weights instead of the RNN?
         for name_w in self.weights:
             print('Applying weight drop of {} to {}'.format(self.dropout, name_w))
             w = getattr(self.module, name_w)
